@@ -7,9 +7,17 @@ const gameText = document.querySelector('.game__text');
 
 let tileCount = 16;
 let tiles = [];
-tiles = creatImageTiles();
 
-shuffle(tiles).forEach(tile => gamePuzzle.appendChild(tile));
+setGame();
+
+function setGame(){
+    tiles = creatImageTiles();
+    tiles.forEach(tile => gamePuzzle.appendChild(tile));
+    setTimeout(()=>{
+        gamePuzzle.innerHTML="";
+        shuffle(tiles).forEach(tile => gamePuzzle.appendChild(tile));
+    },2000)
+}
 
  // make puzzle in Javascript
 function creatImageTiles(){
@@ -32,6 +40,7 @@ function shuffle(array) {
         const randomIndex = Math.floor(Math.random()*(index+1));
         [array[index],array[randomIndex]] = [array[randomIndex], array[index]];
         --index;
+        console.log(randomIndex);
     }
     return array;
 }

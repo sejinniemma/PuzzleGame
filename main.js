@@ -14,13 +14,24 @@ const dragged = {
     index : null
 }
 
+let isPlaying = false;
 
 gameStartBtn.addEventListener('click',()=>{
     setGame();
 })
 
+function checkStatus(){
+    const currentList = [...container.children];
+    const unMatchedList = currentList.filter((child,index) =>  Number(child.getAttribute("data-index")) !== index);
+    if(unMatchedList.length === 0){
+        gameText.style.display = "block";
+        isPlaying = false;
+    }
+}
+
 // setGame
 function setGame(){
+    isPlaying = true;
     container.innerHTML="";
     tiles = creatImageTiles();
     tiles.forEach(tile => container.appendChild(tile));
@@ -56,9 +67,12 @@ function shuffle(array) {
 }
 
 
+
 // drag event
 
 container.addEventListener('dragstart',(e) => {
+    if(!isPlaying) return;
+    
     dragged.el = e.target;
     dragged.class = e.target.className;
     dragged.index = [...e.target.parentNode.childNodes].indexOf(e.target);
@@ -70,9 +84,10 @@ container.addEventListener('dragover',(e)=>{
 })
 
 container.addEventListener('drop',(e) => {
+    if(!isPlaying) return;
+    
     const obj = e.target;
     const droppedIndex = [...obj.parentNode.childNodes].indexOf(obj);
-
 
     if(obj.className !== dragged.class){
         let originPlace;

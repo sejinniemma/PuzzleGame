@@ -15,6 +15,8 @@ const dragged = {
 }
 
 let isPlaying = false;
+let timeInterval = null;
+let time = 0;
 
 gameStartBtn.addEventListener('click',()=>{
     setGame();
@@ -26,19 +28,29 @@ function checkStatus(){
     if(unMatchedList.length === 0){
         gameText.style.display = "block";
         isPlaying = false;
+        clearInterval(timeInterval);
     }
 }
 
 // setGame
 function setGame(){
     isPlaying = true;
+    time = 0;
     container.innerHTML="";
+    clearInterval(timeInterval);
+    gameText.style.display = "none";
+
     tiles = creatImageTiles();
     tiles.forEach(tile => container.appendChild(tile));
     setTimeout(()=>{
         container.innerHTML="";
         shuffle(tiles).forEach(tile => container.appendChild(tile));
-    },2000)
+
+        timeInterval = setInterval(()=>{
+            gameTimer.innerText = time;
+            time++;
+        },1000)
+    },5000)
 }
 
  // make puzzle in Javascript

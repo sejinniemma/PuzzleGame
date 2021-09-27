@@ -10,7 +10,8 @@ ul {
 
 button {
     border: none;
-    background-color: transparent;
+    background-color:plum;
+    color:white;
     cursor: pointer;
     outline: none;
 }
@@ -27,6 +28,7 @@ body {
 
 .game__timer {
     font-size: 80px;
+    color: white;
 }
 
 .game__puzzle {
@@ -62,7 +64,8 @@ li {
 .game__text{
     position: absolute;
     top: 45%;
-    font-size: 50px;
+    font-size: 60px;
+    color: plum;
     display: none;
     text-shadow: 1px 1px rgba(0,0,0,0.5);
 }
@@ -172,7 +175,7 @@ li {
 
     .game__text {
         top: 30%;
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .list0 {

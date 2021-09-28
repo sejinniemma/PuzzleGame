@@ -12,8 +12,8 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
 ### display grid
 
 - I made puzzle using display grid template
-- I made 16 images of each li tag
-- CSS : adjust their location(16 images) so that it can be showed only one part 
+- I made 16 images of each 'li' tag
+- CSS : adjust their location(16 images)
 - as if it looks like they are puzzle pieces with diffrent image
 <br>
 <img width="490" alt="스크린샷 2021-09-28 오후 3 04 49" src="https://user-images.githubusercontent.com/80943394/135033951-425acd9d-adaf-4e74-babd-878a038f9254.png">
@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
 <img width="490" alt="스크린샷 2021-09-28 오후 3 05 04" src="https://user-images.githubusercontent.com/80943394/135033923-c51022b4-eee4-4741-aab1-6eb984f921ef.png">
 
 ### make puzzle list + shuffle puzzle in Javascript 
-1. create tiles
+1. create tiles (li tags)
 - I made array using Array().fill().forach() instead of for loop
 - I add data-index info to check if origin index and data-index attribute is same
 - I pushed '16 li tags' into tempArray[] 
@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
 
 ### setting game
 
-- appendchild : push each of creat puzzle pieces into their parent(container) using foreach
+- appendchild : push each of puzzle pieces into their parent(container) using foreach
 
 <img width="737" alt="스크린샷 2021-09-28 오후 3 42 50" src="https://user-images.githubusercontent.com/80943394/135036785-d190a062-0346-4947-befe-cc46075aa88b.png">
 
@@ -49,11 +49,11 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
 
 1. drag start & drag over
 
-- I made drag object to save drastart information and can be used outside
-- dragged.index : I found Index informaiton through parentNode's childNodes
+- I made 'dragged object' to save 'drag start information' and can be used outside(drag drop event)
+- dragged.index : I found Index information through parentNode's childNodes
 - 💥 but childNodes was an object not an array
--  so made it array using literal array []
--  and put each of array list [...]
+-  so I made it array using literal array []
+-  and put each of it as element [...]
 - to prevent bug, gave preventDefault() when dragover
 
 <img width="782" alt="스크린샷 2021-09-28 오후 4 15 38" src="https://user-images.githubusercontent.com/80943394/135040943-b9fffbec-a27a-4981-8716-59ece0d61273.png">
@@ -64,15 +64,15 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
 - I also made droped information to compare dragstart information
 - we're doing somthing when obg.className and dragged.class is not same (when a peice of puzzle is droppend without their original position) 
 - make logic using before(),after() method : when dragged index is more big then droppendIndex,move it to the front of obj 
-- bug💥 : to switch only two peice(dragged.el and obj),I saved their nextSiblings and using before method so they are switched exactly.
-- bug💥 : but last peice has no nextSbling so in case of last piece, I saved previusSibling instead of nextSibling
+- bug💥 : I wanted to swtich only for the two target (dragged.el and obj),so I saved their nextSiblings and using before method.
+- bug💥 : but last 'li' has no nextSbling so in case of last piece, I saved previusSibling instead of nextSibling
  
 
 <img width="1022" alt="스크린샷 2021-09-28 오후 4 30 03" src="https://user-images.githubusercontent.com/80943394/135042970-d3051905-b81b-42b2-8e56-5420deb5203c.png">
 
 ### check status
 
-- I made unMatched using filter so I can compare origin index and data-index
+- I made 'unMatchedList' using filter so I can compare origin index and data-index
 - if 'unMatchedList === 0', it means all data-index and index are same 
 
 <img width="1216" alt="스크린샷 2021-09-28 오후 4 46 01" src="https://user-images.githubusercontent.com/80943394/135045168-20795730-c539-4945-b30e-3924e68b1219.png">

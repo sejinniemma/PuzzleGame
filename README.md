@@ -69,3 +69,11 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
  
 
 <img width="1022" alt="스크린샷 2021-09-28 오후 4 30 03" src="https://user-images.githubusercontent.com/80943394/135042970-d3051905-b81b-42b2-8e56-5420deb5203c.png">
+
+### check status
+
+- I made unMatched using filter so I can compare origin index and data-index
+- if 'unMatchedList === 0', it means all data-index and index are same 
+
+<img width="1216" alt="스크린샷 2021-09-28 오후 4 46 01" src="https://user-images.githubusercontent.com/80943394/135045168-20795730-c539-4945-b30e-3924e68b1219.png">
+

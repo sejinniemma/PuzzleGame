@@ -43,3 +43,18 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
 - appendchild : push each of creat puzzle pieces into their parent(container) using foreach
 
 <img width="737" alt="스크린샷 2021-09-28 오후 3 42 50" src="https://user-images.githubusercontent.com/80943394/135036785-d190a062-0346-4947-befe-cc46075aa88b.png">
+
+
+### drag event
+
+1. drag start & drag over
+
+- I made drag object to save drastart information
+- dragged.index : I found Index informaiton through parentNode's childNodes
+- 💥 but childNodes was an object not an array
+-  so made it array using literal array []
+-  and put each of array list [...]
+- to prevent bug, gave preventDefault() when dragover
+
+<img width="782" alt="스크린샷 2021-09-28 오후 4 15 38" src="https://user-images.githubusercontent.com/80943394/135040943-b9fffbec-a27a-4981-8716-59ece0d61273.png">
+<img width="284" alt="스크린샷 2021-09-28 오후 4 15 57" src="https://user-images.githubusercontent.com/80943394/135040955-16fa3c38-d923-4a18-9087-c442a76153b0.png">

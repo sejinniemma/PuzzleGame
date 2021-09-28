@@ -118,3 +118,7 @@ container.addEventListener('drop',(e) => {
     checkStatus();
 })
 
+// Music
+
+const bgSound = new Audio('music/cookie.mp3');
+bgSound.play();

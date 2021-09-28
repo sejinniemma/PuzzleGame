@@ -49,7 +49,7 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
 
 1. drag start & drag over
 
-- I made drag object to save drastart information
+- I made drag object to save drastart information and can be used outside
 - dragged.index : I found Index informaiton through parentNode's childNodes
 - 💥 but childNodes was an object not an array
 -  so made it array using literal array []
@@ -58,3 +58,14 @@ https://user-images.githubusercontent.com/80943394/135032931-b639f2d7-0188-4afa-
 
 <img width="782" alt="스크린샷 2021-09-28 오후 4 15 38" src="https://user-images.githubusercontent.com/80943394/135040943-b9fffbec-a27a-4981-8716-59ece0d61273.png">
 <img width="284" alt="스크린샷 2021-09-28 오후 4 15 57" src="https://user-images.githubusercontent.com/80943394/135040955-16fa3c38-d923-4a18-9087-c442a76153b0.png">
+
+2. drag drop
+
+- I also made droped information to compare dragstart information
+- we're doing somthing when obg.className and dragged.class is not same (when a peice of puzzle is droppend without their original position) 
+- make logic using before(),after() method : when dragged index is more big then droppendIndex,move it to the front of obj 
+- bug💥 : to switch only two peice(dragged.el and obj),I saved their nextSiblings and using before method so they are switched exactly.
+- bug💥 : but last peice has no nextSbling so in case of last piece, I saved previusSibling instead of nextSibling
+ 
+
+<img width="1022" alt="스크린샷 2021-09-28 오후 4 30 03" src="https://user-images.githubusercontent.com/80943394/135042970-d3051905-b81b-42b2-8e56-5420deb5203c.png">
